@@ -25,14 +25,15 @@ constructor(props) {
 
 render () {
         let result = '';
-        if (this.props.next) {
-            result += this.props.next + ' ';
+        if (this.props.total) {
+            result += this.props.total + ' ';
         }
+        
         if (this.props.operation) {
             result += this.props.operation + ' ';
         }
-        if (this.props.total) {
-            result += this.props.total + ' ';
+        if (this.props.next) {
+            result += this.props.next + ' ';
         }
         
     return (
