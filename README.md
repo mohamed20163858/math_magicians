@@ -9,7 +9,7 @@
 
 ## Live Demo 
 
-comming soon!
+[Live demo](https://mohamed20163858.github.io/math_magicians/)
 
 ## Getting Started
 You can download the page by clicking in the code green button and select Download ZIP or if you are a developer 
