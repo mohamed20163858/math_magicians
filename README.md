@@ -14,7 +14,7 @@ comming soon!
 ## Getting Started
 You can download the page by clicking in the code green button and select Download ZIP or if you are a developer 
 you can get the https link or ssh link just copy it and use your favourite command line git interface and write this `git clone https://github.com/mohamed20163858/math_magicians.git` if you use https or write 
-`git clone git@github.com:mohamed20163858/math_magicians.git` if you use ssh and then after installition you can run the application by just clicking on index.html inside Math-Magicians/dist directory 
+`git clone git@github.com:mohamed20163858/math_magicians.git` if you use ssh and then after installition you can run the application by opening your terminal change your directory to math_magicians folder then type `npm i` then type `npm start` 
 
 
 ## Authors
