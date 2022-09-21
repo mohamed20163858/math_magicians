@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.ced06256.css",
-    "main.js": "/static/js/main.a7f4e894.js",
-    "index.html": "/index.html",
-    "main.ced06256.css.map": "/static/css/main.ced06256.css.map",
-    "main.a7f4e894.js.map": "/static/js/main.a7f4e894.js.map"
+    "main.css": "/math_magicians/static/css/main.ced06256.css",
+    "main.js": "/math_magicians/static/js/main.a7f4e894.js",
+    "index.html": "/math_magicians/index.html",
+    "main.ced06256.css.map": "/math_magicians/static/css/main.ced06256.css.map",
+    "main.a7f4e894.js.map": "/math_magicians/static/js/main.a7f4e894.js.map"
   },
   "entrypoints": [
     "static/css/main.ced06256.css",
