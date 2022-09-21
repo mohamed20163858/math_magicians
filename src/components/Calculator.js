@@ -1,6 +1,6 @@
 /* eslint-disable */
 import React from 'react';
-// import calculate from '../logic/calculate';
+import calculate from '../logic/calculate';
 import './Calculator.css';
 
 class Button extends React.Component {
@@ -22,9 +22,21 @@ class Paragraph extends React.Component {
 constructor(props) {
     super(props);
 }
+
 render () {
+        let result = '';
+        if (this.props.next) {
+            result += this.props.next + ' ';
+        }
+        if (this.props.operation) {
+            result += this.props.operation + ' ';
+        }
+        if (this.props.total) {
+            result += this.props.total + ' ';
+        }
+        
     return (
-        <p>{this.props.value}</p>
+        <p>{result}</p>
         );
 }
 }
@@ -32,11 +44,14 @@ render () {
 class Calculator extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {recievedChar: ''};
+    this.state = {
+        total: null,
+        next: null,
+        operation: null};
     this.passInput = this.passInput.bind(this);
   }
-  passInput(newChar) {
-    this.setState({recievedChar: newChar});
+  passInput(buttonName) {
+    this.setState(calculate(this.state, buttonName));
     // console.log(newChar);
  }
   render() {
@@ -53,7 +68,7 @@ class Calculator extends React.Component {
     }
     return (
       <div className="calculator">
-        <Paragraph value={this.state.recievedChar}/>
+        <Paragraph operation={this.state.operation} next={this.state.next} total={this.state.total}/>
         {buttons}
       </div>
     );
