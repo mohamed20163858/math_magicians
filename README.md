@@ -17,9 +17,9 @@ you can get the https link or ssh link just copy it and use your favourite comma
 `git clone git@github.com:mohamed20163858/math_magicians.git` if you use ssh and then after installition you can run the application by opening your terminal change your directory to math_magicians folder then type `npm i` then type `npm start`. 
 
 
-## Authors
+## Author
 
-👤 **Author1**
+👤 **Mohamed Saleh**
 
 - GitHub: [@mohamed20163858](https://github.com/mohamed20163858)
 - Twitter: [@mohamed20163858](https://twitter.com/mohamed20163858)
