@@ -1,78 +1,70 @@
-/* eslint-disable */
-import React from 'react';
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import calculate from '../logic/calculate';
 import './Calculator.css';
 
-class Button extends React.Component {
- constructor(props) {
-    super(props);
-     this.processRecievedInput = this.processRecievedInput.bind(this);
- }
- processRecievedInput (e) {
-    this.props.recievedInput(e.target.textContent);
- }
-render () {
-    return (
-        <button className={this.props.class} onClick={this.processRecievedInput}>{this.props.name}</button>
-    );
-}
-}
+const Button = (props) => {
+  const { name, myClass, recievedInput } = props;
+  const processRecievedInput = (e) => {
+    recievedInput(e.target.textContent);
+  };
 
-class Paragraph extends React.Component {
-constructor(props) {
-    super(props);
-}
-
-render () {
-        let result = '';
-        if (this.props.total) {
-            result += this.props.total + ' ';
-        }
-        
-        if (this.props.operation) {
-            result += this.props.operation + ' ';
-        }
-        if (this.props.next) {
-            result += this.props.next + ' ';
-        }
-        
-    return (
-        <p>{result}</p>
-        );
-}
-}
-
-class Calculator extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-        total: null,
-        next: null,
-        operation: null};
-    this.passInput = this.passInput.bind(this);
+  return (
+    <button type="submit" className={myClass} onClick={processRecievedInput}>{name}</button>
+  );
+};
+Button.propTypes = {
+  name: PropTypes.string.isRequired,
+  myClass: PropTypes.string.isRequired,
+  recievedInput: PropTypes.string.isRequired,
+};
+const Paragraph = (props) => {
+  let result = '';
+  const { total, operation, next } = props;
+  if (total) {
+    result += `${total} `;
   }
-  passInput(buttonName) {
-    this.setState(calculate(this.state, buttonName));
-    // console.log(newChar);
- }
-  render() {
-    
-    const symbols = ['AC','+/-','%','÷','7','8','9','x','4','5','6','-','1','2','3','+','0','.','='];
-    let buttons = [];
-    for(let i=0; i<symbols.length; i += 1) {
-        if ( (i+1)%4 === 0 || (i+1) === symbols.length) {
-            buttons.push(<Button name={symbols[i]} recievedInput={this.passInput} class={'orange'} />);
-        }
-        else {
-            buttons.push(<Button name={symbols[i]} recievedInput={this.passInput} class={'gray'} />);
-        }
+
+  if (operation) {
+    result += `${operation} `;
+  }
+  if (next) {
+    result += `${next} `;
+  }
+  return (
+    <p>{result}</p>
+  );
+};
+Paragraph.propTypes = {
+  total: PropTypes.string.isRequired,
+  operation: PropTypes.string.isRequired,
+  next: PropTypes.string.isRequired,
+};
+const Calculator = () => {
+  const initialS = {
+    total: null,
+    next: null,
+    operation: null,
+  };
+  const [s, setS] = useState(initialS);
+  const passInput = (buttonName) => {
+    setS(calculate(s, buttonName));
+  };
+
+  const symbols = ['AC', '+/-', '%', '÷', '7', '8', '9', 'x', '4', '5', '6', '-', '1', '2', '3', '+', '0', '.', '='];
+  const buttons = [];
+  for (let i = 0; i < symbols.length; i += 1) {
+    if ((i + 1) % 4 === 0 || (i + 1) === symbols.length) {
+      buttons.push(<Button name={symbols[i]} recievedInput={passInput} myClass="orange" />);
+    } else {
+      buttons.push(<Button name={symbols[i]} recievedInput={passInput} myClass="gray" />);
     }
-    return (
-      <div className="calculator">
-        <Paragraph operation={this.state.operation} next={this.state.next} total={this.state.total}/>
-        {buttons}
-      </div>
-    );
   }
-}
+  return (
+    <div className="calculator">
+      <Paragraph operation={s.operation} next={s.next} total={s.total} />
+      {buttons}
+    </div>
+  );
+};
 export default Calculator;

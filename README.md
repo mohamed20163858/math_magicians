@@ -1,7 +1,7 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Math Magicians: Setup
-> setup a react app application.
+# Math Magicians: Final version
+> build a very simple calculator to show react component abilities , all components are built using Functional hooks and JSX syntax
 
 ## Built With
 
