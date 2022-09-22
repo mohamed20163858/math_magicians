@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from 'prop-types';
 import calculate from '../logic/calculate';
 import './Calculator.css';
@@ -50,7 +49,6 @@ const Calculator = () => {
   const [s, setS] = useState(initialS);
   const passInput = (buttonName) => {
     setS(calculate(s, buttonName));
-    // console.log(newChar);
   };
 
   const symbols = ['AC', '+/-', '%', '÷', '7', '8', '9', 'x', '4', '5', '6', '-', '1', '2', '3', '+', '0', '.', '='];
