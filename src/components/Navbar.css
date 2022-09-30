@@ -1,0 +1,37 @@
+.outer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 2vw;
+  margin-bottom: 15vh;
+}
+
+.outer ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+}
+
+.outer ul li a {
+  color: rgb(51, 230, 230);
+}
+
+.outer .inner-1 a {
+  text-decoration: none;
+}
+
+.outer .inner-2 li:not(:last-of-type) {
+  border-right: black 2px solid;
+  padding-right: 10px;
+}
+
+.outer a h1 {
+  font-size: 60px;
+  font-weight: bold;
+  color: black;
+}
+
+.visited {
+  color: red !important;
+}
