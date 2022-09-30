@@ -30,11 +30,10 @@
   background-color: white;
 }
 
-#root {
+#body {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  justify-content: space-around;
+  height: 70vh;
 }
 
 .calculator {
@@ -44,7 +43,7 @@
   height: 50vh;
 }
 
-p {
+.calculator p {
   grid-column: 1 / 5;
   color: white;
   background-color: #858694;

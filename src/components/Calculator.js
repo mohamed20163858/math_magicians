@@ -61,9 +61,12 @@ const Calculator = () => {
     }
   }
   return (
-    <div className="calculator">
-      <Paragraph operation={s.operation} next={s.next} total={s.total} />
-      {buttons}
+    <div id="body">
+      <h3>Let&apos;s do some math!</h3>
+      <div className="calculator">
+        <Paragraph operation={s.operation} next={s.next} total={s.total} />
+        {buttons}
+      </div>
     </div>
   );
 };
