@@ -11,6 +11,16 @@ describe('test operate functions', () => {
     // Assert
     expect(result).toBe(21);
   });
+  test('test the addition opperation', () => {
+    // Assign step
+    const numberOne = 45;
+    const numberTwo = 10;
+    const operation = '+';
+    // Act
+    const result = +operate(numberOne, numberTwo, operation);
+    // Assert
+    expect(result).toBe(55);
+  });
   test('test the subtraction opperation', () => {
     // Assign step
     const numberOne = 9;
