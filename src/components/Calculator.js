@@ -16,7 +16,7 @@ const Button = (props) => {
 Button.propTypes = {
   name: PropTypes.string.isRequired,
   myClass: PropTypes.string.isRequired,
-  recievedInput: PropTypes.string.isRequired,
+  recievedInput: PropTypes.func.isRequired,
 };
 const Paragraph = (props) => {
   let result = '';
@@ -55,16 +55,16 @@ const Calculator = () => {
   const buttons = [];
   for (let i = 0; i < symbols.length; i += 1) {
     if ((i + 1) % 4 === 0 || (i + 1) === symbols.length) {
-      buttons.push(<Button name={symbols[i]} recievedInput={passInput} myClass="orange" />);
+      buttons.push(<Button name={symbols[i]} recievedInput={passInput} myClass="orange" key={`Button-${i}`} />);
     } else {
-      buttons.push(<Button name={symbols[i]} recievedInput={passInput} myClass="gray" />);
+      buttons.push(<Button name={symbols[i]} recievedInput={passInput} myClass="gray" key={`Button-${i}`} />);
     }
   }
   return (
     <div id="body">
       <h3>Let&apos;s do some math!</h3>
       <div className="calculator">
-        <Paragraph operation={s.operation} next={s.next} total={s.total} />
+        <Paragraph operation={s.operation ? s.operation : ''} next={s.next ? s.next : ''} total={s.total ? s.total : ''} />
         {buttons}
       </div>
     </div>
